@@ -1,0 +1,130 @@
+{% extends 'base.html' %} {% block head %}
+<title>About - Todoies</title>
+<style>
+  .navbar1 {
+    -webkit-user-select: none !important; /* Safari */
+    -moz-user-select: none !important; /* Firefox */
+    -ms-user-select: none !important; /* Internet Explorer/Edge */
+    user-select: none !important; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+  .home {
+    color: white !important;
+    cursor: pointer !important;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+</style>
+{% endblock %} {% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar1">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Todoies</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link disabled home" aria-current="page" href="#"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <img
+    style="
+      display: block;
+
+      margin-left: auto;
+      margin-right: auto;
+      width: 20%;
+    "
+    src="https://www.linkpicture.com/q/Screen-Shot-2021-05-27-at-5.00.22-PM.png"
+    class="img-thumbnail"
+    alt="logo"
+  />
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="true"
+          aria-controls="collapseOne"
+        >
+          Me
+        </button>
+      </h2>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <strong>I am Neil Rehani.</strong> I know <code>Python</code> (from
+          which this website is created), <code>JS</code>, <code>HTML</code>,
+          <code>CSS</code>, <code>ReactJS</code> & <code>React Native</code>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          My Teachers
+        </button>
+      </h2>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <strong>All the credit goes to:</strong> CodeWithHarry (for teaching
+          me Python, CSS, JS), Sonny Sangha & Clever Programmer (for teaching me
+          ReactJS with builds), The Net Ninja & CODERS NEVER QUIT (for teaching
+          me React Native), freeCodeCamp.org & The Codex (for teaching me Flask)
+          & alas, my family for believing in me.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

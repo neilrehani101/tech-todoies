@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block head %}
+<title>TechTodoies</title>
+<style>
+  .navbar1 {
+    -webkit-user-select: none !important; /* Safari */
+    -moz-user-select: none !important; /* Firefox */
+    -ms-user-select: none !important; /* Internet Explorer/Edge */
+    user-select: none !important; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+  .home {
+    color: white !important;
+    cursor: pointer !important;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+</style>
+{% endblock %} {% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar1">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Todoies</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link disabled home" aria-current="page" href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div style="margin-top: 10px">
+  <h1 style="text-align: center">Update task</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center">
+  <form action="/update/{{task.id}}" method="POST" class="row g-3">
+    <div class="col-auto">
+      <input
+        type="text"
+        name="content"
+        id="content"
+        value="{{task.content}}"
+        class="form-control"
+        placeholder="Task"
+      />
+    </div>
+    <div class="col-auto">
+      <input type="submit" value="Update" class="btn btn-primary mb-3" />
+    </div>
+  </form>
+</div>
+{% endblock %}
